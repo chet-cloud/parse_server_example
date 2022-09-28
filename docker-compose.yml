@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  mongodb:
+    image: docker.io/bitnami/mongodb:5.0
+    ports:
+      - "27018:27017"
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+    volumes:
+      - 'mongodb_data:/bitnami/mongodb'
+
+volumes:
+  mongodb_data:
+    driver: local
